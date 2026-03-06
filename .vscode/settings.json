@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.port": 5502
+
+    "editor.tabSize": 2, // Укажите ваш старый размер
+    "editor.insertSpaces": true // Или false, если нужны табы, а не пробелы
+
+}
