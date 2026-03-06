@@ -1,13 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documents</title>
+  <title>Главная страница</title>
 
 </head>
+
 <body>
-    <h1>ELTEX</h1>
+    <header class="header">
+      <div class="container">
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-list-item">
+              <a href="./index.html" class="header-link" target="_blank">Главная</a>
+            </li>
+            <li class="header-list-item">
+              <a href="./blog.html" class="header-link" target="_blank">Блог</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 class="section-title">Обо мне</h1>
+          <p class="hero-description">Добро пожаловать! Я начинающий веб-разработчик. Этот сайт - наглядная демонстрация роста и развития моих навыков в это благородном начинании.</p>
+          <img class="hero-image" src="./img/shkola-iskusstv.jpg" alt="preview photo" width="540" height="300">
+        </div>
+      </section>
+
+      <section class="career">
+        <div class="container">
+          <h2 class="section-title">Моя карьера</h2>
+          <ul class="cereer-list" style="list-style-type: none">
+            <li class="career-item">
+              <h3 class="info-title">Текущая должность</h3>
+              <p class="cereer-info-descr">Ученик школы Eltex
+              <br>Начинаю утро с кофе. Не паникую, когда командная строка посылает далеко и без хлеба. Проверяю все скобки на четное количество. </p>
+            </li>
+            <li class="career-item">
+              <h3 class="info-title">Опыт работы:</h3>
+              <h4 class="description-title">Активный соискатель работы, январь 2026</h4>
+              <p class="cereer-info-descr">Поиск на HeadHunter, отклик на любую junior вакансию, рассылка резюме во все Новосибирские компании</p>
+              <h4 class="description-title">Заинтересованный соискатель Eltex, февраль 2026</h4>
+              <p class="cereer-info-descr">Подача заявки в школу Eltex, успешное прохождение тестирования</p>
+              <h4 class="description-title">Счастливый студент Eltex, март 2026</h4>
+              <p class="cereer-info-descr">Интенсивное обучение премудростям веб-разработки</p>
+            </li>
+            <li class="career-item">
+              <h3 class="info-title">Образование:</h3>
+              <dl class="list-descrip">
+                <dt class="list-descrip-term" style="font-weight: bold">Московский финансово-промышленный университет "Синергия", 2016 — 2020</dt>
+                <dd class="list-descrip-specif">Бакалавриат по специальности "Бухгалтерский учет, анализ и аудит"
+              </dl>
+            </li>
+            <li class="career-item">
+              <h3 class="info-title">Курсы и сертификации:</h3>
+              <ul class="list-descrip">
+                <li class="list-descrip-item">Добрый, добрый C/C++ — Stepik (2024)</li>
+                <li class="list-descrip-item">Веб-верстка "Базовый уровень" — Skillbox (2024)</li>
+              </ul>
+            </li>
+            <li class="career-item">
+              <h3 class="info-title">Навыки:</h3>
+              <ul class="list-descrip">
+                <li class="list-descrip-item">Программирование: HTML5, CSS, C</li>
+                <li class="list-descrip-item">Инструменты: Git, Figma, VS Code</li>
+                <li class="list-descrip-item">Персональные: ответственность, обучаемость, позитивное мышление</li>
+              </ul>
+            </li>
+            <li class="career-item">
+              <h3 class="info-title">Достижения:</h3>
+              <ul class="list-descrip">
+                <li class="list-descrip-item">Вышла из Vim с первого раза.</li>
+                <li class="list-descrip-item">Переустановила систему, чтобы понять - проблема была не в этом.</li>
+                <li class="list-descrip-item">Купила 4 книги по программированию, чтобы они уже год стояли на полке ни разу не открытые - ибо все есть и интернете.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="articles">
+        <div class="container">
+          <h2 class="section-title">Последние статьи</h2>
+          <ul class="articles-list" style="list-style-type: none">
+            <li class="articles-item">
+              <article class="article-preview">
+                <a href="#" class="article-preview-link">
+                  <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+                </a>
+                <div class="article-preview-text">
+                  <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+                  <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+                </div>
+              </article>
+            </li>
+            <li class="articles-item">
+              <article class="article-preview">
+                <a href="#" class="article-preview-link">
+                  <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+                </a>
+                <div class="article-preview-text">
+                  <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+                  <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+                </div>
+              </article>
+            </li>
+            <li class="articles-item">
+              <article class="article-preview">
+                <a href="#" class="article-preview-link">
+                  <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+                </a>
+                <div class="article-preview-text">
+                  <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+                  <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class="article-btn">
+            <button class="button" onclick="openLink()">Посмотреть все статьи</button>
+            <script>
+              let openLink = () => {
+                window.open("./blog.html");
+              }
+            </script>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="contacts">
+          <h2 class="section-title">Контакты</h2>
+          <ul class="contacts-list" style="list-style-type: none">
+            <li class="contact-item">
+              <p class="contact-item-descr">Email:<a href="mailto:example@example.com" class="contact-item-link">example@example.com</a></p>
+            </li>
+            <li class="contact-item">
+              <p class="contact-item-descr">Телефон:<a href="tel:+79001111111" class="contact-item-link">+7 (900) 111-11-11</a></p>
+            </li>
+          </ul>
+
+          <style>
+            table {
+              border-collapse: collapse; /* Убирает двойные границы */
+            }
+            td:not(:last-child) {
+              border-right: 1px solid black;
+              padding-right: 6px;
+            }
+            td:not(:first-child) {
+              padding-left: 6px;
+            }
+          </style>
+
+          <table>
+            <caption><strong>Социальные сети:</strong></caption>
+            <tbody>
+              <tr>
+                <td><a href="#" class="social-link">Instagram</a></td>
+                <td><a href="#" class="social-link">Telegram</a></td>
+                <td><a href="#" class="social-link">WhatsApp</a></td>
+                <td><a href="#" class="social-link">GitHub</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
