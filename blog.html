@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+</head>
+<body>
+    <header class="header">
+      <div class="container">
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-list-item">
+              <a href="./index.html" class="header-link" target="_blank">Главная</a>
+            </li>
+            <li class="header-list-item">
+              <a href="./blog.html" class="header-link" target="_blank">Блог</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="articles">
+        <div class="container">
+          <h1 class="section-title">Статьи</h1>
+          <article class="article-preview">
+            <a href="#" class="article-preview-link">
+              <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+            </a>
+            <div class="article-preview-text">
+              <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+              <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+            </div>
+          </article>
+          <article class="article-preview">
+            <a href="#" class="article-preview-link">
+              <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+            </a>
+            <div class="article-preview-text">
+              <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+              <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+            </div>
+          </article>
+          <article class="article-preview">
+            <a href="#" class="article-preview-link">
+              <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+            </a>
+            <div class="article-preview-text">
+              <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+              <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+            </div>
+          </article>
+          <article class="article-preview">
+            <a href="#" class="article-preview-link">
+              <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+            </a>
+            <div class="article-preview-text">
+              <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+              <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+            </div>
+          </article>
+          <article class="article-preview">
+            <a href="#" class="article-preview-link">
+              <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
+            </a>
+            <div class="article-preview-text">
+              <p class="article-preview-time">Опубликовано:<time datetime="2001-05-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
+              <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="form">
+        <div class="container">
+          <h2 class="section-title">Создать статью</h2>
+          <form class="form" action="https://jsonplaceholder.typicode.com/posts" method="post">
+
+            <style>
+              .form-filing {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 50%;
+                margin-bottom: 10px;
+              }
+            </style>
+
+            <div class="form-filing">
+              <input class="form-input" type="text" name="Заголовок" placeholder="заголовок" required="">
+              <textarea class="form-textarea" name="Текст статьи" placeholder="текст статьи" rows="5" required=""></textarea>
+            </div>
+            <div class="form-button">
+              <button class="button" type="submit">Добавить</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="contacts">
+          <h2 class="section-title">Контакты</h2>
+          <ul class="contacts-list" style="list-style-type: none">
+            <li class="contact-item">
+              <p class="contact-item-descr">Email:<a href="mailto:example@example.com" class="contact-item-link">example@example.com</a></p>
+            </li>
+            <li class="contact-item">
+              <p class="contact-item-descr">Телефон:<a href="tel:+79001111111" class="contact-item-link">+7 (900) 111-11-11</a></p>
+            </li>
+          </ul>
+
+          <style>
+            table {
+              border-collapse: collapse; /* Убирает двойные границы */
+            }
+            td:not(:last-child) {
+              border-right: 1px solid black;
+              padding-right: 6px;
+            }
+            td:not(:first-child) {
+              padding-left: 6px;
+            }
+          </style>
+
+          <table>
+            <caption><strong>Социальные сети:</strong></caption>
+            <tbody>
+              <tr>
+                <td><a href="#" class="social-link">Instagram</a></td>
+                <td><a href="#" class="social-link">Telegram</a></td>
+                <td><a href="#" class="social-link">WhatsApp</a></td>
+                <td><a href="#" class="social-link">GitHub</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </footer>    
+</body>
+</html>
