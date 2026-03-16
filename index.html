@@ -1,168 +1,336 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная страница</title>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Главная</title>
+  <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/fonts.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-<body>
-    <header class="header">
-      <div class="container">
-        <nav class="header-nav">
-          <ul class="header-list">
-            <li class="header-list-item">
-              <a href="./index.html" class="header-link">Главная</a>
-            </li>
-            <li class="header-list-item">
-              <a href="./blog.html" class="header-link">Блог</a>
-            </li>
-          </ul>
-        </nav>
+<body class="page">
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <img class="logo-img" src="./img/logo-a.png" alt="logo-anime-coffee" />
+        <p class="logo-text">настасия</p>
       </div>
-    </header>
+      <nav class="header-nav">
+        <ul class="list-reset header-list">
+          <li class="header-list-item">
+            <a href="./index.html" class="nav-link">Главная</a>
+          </li>
+          <li class="header-list-item">
+            <a href="./blog.html" class="nav-link">Блог</a>
+          </li>
+          <li class="header-list-item">
+            <a href="#footer" class="nav-link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main>
+  <main>
+    <div class="container main-container flex">
       <section class="hero">
-        <div class="container">
-          <h1 class="section-title">Обо мне</h1>
-          <p class="hero-description">Добро пожаловать! Я начинающий веб-разработчик. Этот сайт - наглядная демонстрация роста и развития моих навыков в это благородном начинании.</p>
-          <img class="hero-image" src="./img/shkola-iskusstv.jpg" alt="preview photo" width="540" height="300">
+        <div class="hero-left">
+          <h1 class="section-title">Добро пожаловать!</h1>
+          <p class="section-title visually-hidden">Добро пожаловать!</p>
+          <p class="hero-description">
+            Я&nbsp;начинающий веб-разработчик. Этот сайт&nbsp;&mdash;
+            наглядная демонстрация роста и&nbsp;развития моих навыков
+            в&nbsp;это благородном начинании.
+          </p>
+          <a class="hero-link" href="#">
+            <span class="hero-link-text nav-link">Больше обо мне</span>
+            <svg width="13" height="19" viewBox="0 0 13 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 1.5L10 10L1.5 17.5" stroke="#61C15C" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="hero-right">
+          <!-- <img class="hero-image" src="./img/shkola-iskusstv.jpg" alt="preview photo"> -->
         </div>
       </section>
 
       <section class="career">
-        <div class="container">
+        <div class="career-section">
           <h2 class="section-title">Моя карьера</h2>
-          <ul class="cereer-list" style="list-style-type: none">
-            <li class="career-item">
-              <h3 class="info-title">Текущая должность</h3>
-              <p class="cereer-info-descr">Ученик школы Eltex
-              <br>Начинаю утро с кофе. Не паникую, когда командная строка посылает далеко и без хлеба. Проверяю все скобки на четное количество. </p>
-            </li>
-            <li class="career-item">
-              <h3 class="info-title">Опыт работы:</h3>
-              <h4 class="description-title">Активный соискатель работы, январь 2026</h4>
-              <p class="cereer-info-descr">Поиск на HeadHunter, отклик на любую junior вакансию, рассылка резюме во все Новосибирские компании</p>
-              <h4 class="description-title">Заинтересованный соискатель Eltex, февраль 2026</h4>
-              <p class="cereer-info-descr">Подача заявки в школу Eltex, успешное прохождение тестирования</p>
-              <h4 class="description-title">Счастливый студент Eltex, март 2026</h4>
-              <p class="cereer-info-descr">Интенсивное обучение премудростям веб-разработки</p>
-            </li>
-            <li class="career-item">
-              <h3 class="info-title">Образование:</h3>
-              <dl class="list-descrip">
-                <dt class="list-descrip-term" style="font-weight: bold">Московский финансово-промышленный университет "Синергия", 2016 — 2020</dt>
-                <dd class="list-descrip-specif">Бакалавриат по специальности "Бухгалтерский учет, анализ и аудит"
-              </dl>
-            </li>
-            <li class="career-item">
-              <h3 class="info-title">Курсы и сертификации:</h3>
-              <ul class="list-descrip">
-                <li class="list-descrip-item">Добрый, добрый C/C++ — Stepik (2024)</li>
-                <li class="list-descrip-item">Веб-верстка "Базовый уровень" — Skillbox (2024)</li>
-              </ul>
-            </li>
-            <li class="career-item">
-              <h3 class="info-title">Навыки:</h3>
-              <ul class="list-descrip">
-                <li class="list-descrip-item">Программирование: HTML5, CSS, C</li>
-                <li class="list-descrip-item">Инструменты: Git, Figma, VS Code</li>
-                <li class="list-descrip-item">Персональные: ответственность, обучаемость, позитивное мышление</li>
-              </ul>
-            </li>
-            <li class="career-item">
-              <h3 class="info-title">Достижения:</h3>
-              <ul class="list-descrip">
-                <li class="list-descrip-item">Вышла из Vim с первого раза.</li>
-                <li class="list-descrip-item">Переустановила систему, чтобы понять - проблема была не в этом.</li>
-                <li class="list-descrip-item">Купила 4 книги по программированию, чтобы они уже год стояли на полке ни разу не открытые - ибо все есть и интернете.</li>
-              </ul>
-            </li>
-          </ul>
+          <h3 class="info-title">Текущая должность</h3>
+          <div class="career-box">
+            <h4 class="description-title text-decor">Ученик школы Eltex</h4>
+            <p class="cereer-info-descr text-decor">
+              Начинаю утро с&nbsp;кофе. Не&nbsp;паникую, когда командная
+              строка посылает далеко и&nbsp;без хлеба. Проверяю все скобки
+              на&nbsp;четное количество.
+            </p>
+          </div>
+          <h3 class="info-title">Опыт работы:</h3>
+          <div class="career-box">
+            <h4 class="description-title text-decor">
+              Активный соискатель работы, январь 2026
+            </h4>
+            <p class="cereer-info-descr text-decor">
+              Поиск на&nbsp;HeadHunter, отклик на&nbsp;любую junior вакансию,
+              рассылка резюме во&nbsp;все Новосибирские компании
+            </p>
+            <h4 class="description-title text-decor">
+              Заинтересованный соискатель Eltex, февраль 2026
+            </h4>
+            <p class="cereer-info-descr text-decor">
+              Подача заявки в&nbsp;школу Eltex,успешное прохождение
+              тестирования
+            </p>
+            <h4 class="description-title text-decor">
+              Счастливый студент Eltex, март 2026
+            </h4>
+            <p class="cereer-info-descr text-decor">
+              Интенсивное обучение премудростям веб-разработки
+            </p>
+          </div>
         </div>
       </section>
 
+      <section class="skills flex">
+        <div class="flex-item skills-wrap">
+          <h2 class="section-title skills-title-main">Мои навыки</h2>
+          <p class="skills-text">
+            Образование:
+            <span class="text-d">Московский финансово-промышленный университет
+              &laquo;Синергия&raquo;,</span><span class="text-d">2016&nbsp;&mdash; 2020</span>
+            <span class="text-d">Бакалавриат по специальности</span>
+            <span class="text-d">&laquo;Бухгалтерский учет, анализ и&nbsp;аудит&raquo;</span>
+          </p>
+        </div>
+        <ul class="flex-item list-reset skills-list flex">
+          <li class="skills-item skills-item1">
+            <article class="flex-wrap flex-wrap-1">
+              <div class="wrap-r">
+                <h3 class="skills-title">Курсы и сертификации:</h3>
+                <ul class="list-descrip list-reset">
+                  <li class="list-descrip-item">
+                    Добрый, добрый C/C++&nbsp;&mdash; Stepik (2024)
+                  </li>
+                  <li class="list-descrip-item">
+                    Веб-верстка &laquo;Базовый уровень&raquo;&nbsp;&mdash;
+                    Skillbox (2024)
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </li>
+          <li class="skills-item skills-item2">
+            <div class="flex-wrap flex-wrap-2">
+              <div class="wrap-r">
+                <h3 class="skills-title">Навыки:</h3>
+                <ul class="list-descrip list-reset">
+                  <li class="list-descrip-item">
+                    Программирование: HTML5, CSS, C
+                  </li>
+                  <li class="list-descrip-item">
+                    Инструменты: Git, Figma, VS&nbsp;Code
+                  </li>
+                  <li class="list-descrip-item">
+                    Персональные: ответственность, обучаемость, позитивное
+                    мышление
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="skills-item skills-item3">
+            <div class="flex-wrap flex-wrap-3">
+              <div class="wrap-r">
+                <h3 class="skills-title">Достижения:</h3>
+                <ul class="list-descrip list-reset">
+                  <li class="list-descrip-item">
+                    Вышла из&nbsp;Vim с&nbsp;первого раза.
+                  </li>
+                  <li class="list-descrip-item">
+                    Переустановила систему, чтобы понять&nbsp;&mdash; проблема
+                    была не&nbsp;в&nbsp;этом.
+                  </li>
+                  <li class="list-descrip-item">
+                    Купила 4&nbsp;книги по&nbsp;программированию, чтобы они
+                    уже год стояли на&nbsp;полке ни&nbsp;разу
+                    не&nbsp;открытые&nbsp;&mdash; ибо все есть
+                    и&nbsp;интернете.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       <section class="articles">
-        <div class="container">
-          <h2 class="section-title">Последние статьи</h2>
-          <ul class="articles-list" style="list-style-type: none">
+        <div class="article-section flex">
+          <h2 class="section-title visually-hidden">Последние статьи</h2>
+          <ul class="list-reset articles-list flex">
             <li class="articles-item">
-              <article class="article-preview">
-                <a href="#" class="article-preview-link">
-                  <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
-                </a>
-                <div class="article-preview-text">
-                  <p class="article-preview-time">Опубликовано:<time datetime="2024-12-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
-                  <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+              <article class="article-preview flex">
+                <div class="article-preview-text flex">
+                  <a href="#" class="article-preview-link">
+                    <h3 class="article-title">
+                      Как создать адаптивный дизайн за&nbsp;30&nbsp;минут
+                    </h3>
+                  </a>
+                  <p class="article-preview-time">
+                    Опубликовано:<time datetime="2024-12-15 19:00">15&nbsp;декабря 2024</time>
+                  </p>
+                  <p class="article-preview-description">
+                    В&nbsp;этой статье я&nbsp;расскажу о&nbsp;ключевых
+                    принципах создания мобильных интерфейсов, которые
+                    одинаково хорошо выглядят на&nbsp;всех устройствах.
+                  </p>
                 </div>
+                <img class="article-img" src="./img/articles.png" alt="article-preview" />
               </article>
             </li>
             <li class="articles-item">
-              <article class="article-preview">
-                <a href="#" class="article-preview-link">
-                  <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
-                </a>
-                <div class="article-preview-text">
-                  <p class="article-preview-time">Опубликовано:<time datetime="2024-12-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
-                  <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+              <article class="article-preview flex">
+                <div class="article-preview-text flex">
+                  <a href="#" class="article-preview-link">
+                    <h3 class="article-title">
+                      Как создать адаптивный дизайн за&nbsp;30&nbsp;минут
+                    </h3>
+                  </a>
+                  <p class="article-preview-time">
+                    Опубликовано:<time datetime="2024-12-15 19:00">15&nbsp;декабря 2024</time>
+                  </p>
+                  <p class="article-preview-description">
+                    В&nbsp;этой статье я&nbsp;расскажу о&nbsp;ключевых
+                    принципах создания мобильных интерфейсов, которые
+                    одинаково хорошо выглядят на&nbsp;всех устройствах.
+                  </p>
                 </div>
+                <img class="article-img" src="./img/articles.png" alt="article-preview" />
               </article>
             </li>
             <li class="articles-item">
-              <article class="article-preview">
-                <a href="#" class="article-preview-link">
-                  <h3 class="article-title">Как создать адаптивный дизайн за 30 минут</h3>
-                </a>
-                <div class="article-preview-text">
-                  <p class="article-preview-time">Опубликовано:<time datetime="2024-12-15 19:00" class="article-preview-time">15 декабря 2024</time></p>
-                  <p class="article-preview-description">В этой статье я расскажу о ключевых принципах создания мобильных интерфейсов, которые одинаково хорошо выглядят на всех устройствах. Вы узнаете о медиа-запросах, гибких сетках и практических примерах кода, которые можно использовать прямо сейчас.</p>
+              <article class="article-preview flex">
+                <div class="article-preview-text flex">
+                  <a href="#" class="article-preview-link">
+                    <h3 class="article-title">
+                      Как создать адаптивный дизайн за&nbsp;30&nbsp;минут
+                    </h3>
+                  </a>
+                  <p class="article-preview-time">
+                    Опубликовано:<time datetime="2024-12-15 19:00">15&nbsp;декабря 2024</time>
+                  </p>
+                  <p class="article-preview-description">
+                    В&nbsp;этой статье я&nbsp;расскажу о&nbsp;ключевых
+                    принципах создания мобильных интерфейсов, которые
+                    одинаково хорошо выглядят на&nbsp;всех устройствах.
+                  </p>
                 </div>
+                <img class="article-img" src="./img/articles.png" alt="article-preview" />
               </article>
             </li>
           </ul>
           <div class="article-btn">
-            <button class="button" onclick="openLink()">Посмотреть все статьи</button>
+            <button class="btn-reset button" onclick="openLink()">
+              Посмотреть все статьи
+            </button>
             <script>
               let openLink = () => {
                 window.open("./blog.html");
-              }
+              };
             </script>
           </div>
         </div>
       </section>
-    </main>
 
-    <footer>
-      <div class="container">
-        <div class="contacts">
-          <h2 class="section-title">Контакты</h2>
-          <ul class="contacts-list" style="list-style-type: none">
+      <section class="hobby">
+        <h2 class="section-title hobby-title">Мои увлечения</h2>
+        <p class="hobby-description">
+          Как гласит древняя китайская мудрость, &laquo;ни&nbsp;сцы&raquo;,
+          что в&nbsp;переводе означает &laquo;будь безмятежен, как цветок
+          лотоса у&nbsp;ступеней храма истины&raquo;
+        </p>
+
+        <div class="hobby-img grid-frame1 flex">
+          <!-- <img src="./img/hobby1.jpg" alt="hobby1"> -->
+          <article class="hobby-article">
+            <blockquote class="quote">
+              <p class="quote-title">
+                Вернуться к&nbsp;древнейшим истокам, откуда
+              </p>
+              <p class="quote-text">
+                <span class="text-q">Мы&nbsp;жизнь начинали и&nbsp;верили в&nbsp;чудо<br /></span>
+                <span class="text-q">За&nbsp;камнем, сиявшим вечерней звездой,<br /></span>
+                <span class="text-q">вернуться за&nbsp;кладом, готовиться к&nbsp;бою,<br /></span>
+                <span class="text-q">Венуться для мщенья за&nbsp;павших на&nbsp;брани,<br /></span>
+                <span class="text-q">Сражаться, врагов разметая руками...<br /></span>
+                <span class="text-q">Вернуться за&nbsp;солнцем, небесным покоем,<br /></span>
+                <span class="text-q">За&nbsp;старой легендой и&nbsp;новой любовью</span>
+              </p>
+            </blockquote>
+          </article>
+        </div>
+        <div class="hobby-img grid-frame2">
+          <!-- <img src="./img/hobby2.jpg" alt="hobby2"> -->
+        </div>
+        <div class="hobby-img grid-frame3">
+          <img src="./img/hobby3.jpg" alt="hobby3" />
+        </div>
+        <div class="hobby-img grid-frame4">
+          <img src="./img/hobby4.jpg" alt="hobby4" />
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-page flex">
+      <div class="footer-container flex">
+        <section class="contacts flex">
+          <h2 class="section-title footer-title">Не&nbsp;ждите чуда! Чудите cами!</h2>
+          <ul class="list-reset contacts-list">
             <li class="contact-item">
-              <p class="contact-item-descr">Email:<a href="mailto:example@example.com" class="contact-item-link">example@example.com</a></p>
+              <p class="contact-item-descr">
+                Email: <a href="mailto:example@example.com" class="contact-item-link">example@example.com</a>
+              </p>
             </li>
             <li class="contact-item">
-              <p class="contact-item-descr">Телефон:<a href="tel:+79001111111" class="contact-item-link">+7 (900) 111-11-11</a></p>
+              <p class="contact-item-descr">
+                Телефон: <a href="tel:+79001111111" class="contact-item-link">+7 (900) 111-11-11</a>
+              </p>
             </li>
           </ul>
+          <ul class="list-reset social-list flex">
+            <li><a href="#" class="social-item-link">
+                <svg width="26" height="17" viewBox="0 0 26 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15.2756 15.762V11.264C18.1346 11.7247 19.0385 14.1024 20.859 15.762H25.5C24.3397 13.0245 22.6084 10.5999 20.4359 8.66954C22.1026 6.24442 23.8718 3.96156 24.7372 0.5H20.5192C18.8654 3.14867 17.9936 6.25119 15.2756 8.29697V0.5H9.15385L10.6154 2.41029V9.21824C8.24359 8.92696 6.64103 4.3409 4.90385 0.5H0.5C2.10256 5.68895 5.47436 17.0762 15.2756 15.762Z"
+                    stroke="#FAFBFD" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a></li>
+            <li><a href="#" class="social-item-link">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M17.9654 2.09463C18.2244 0.744938 16.9841 -0.376683 15.7817 0.119877L1.04234 6.20659C-0.300459 6.76111 -0.360291 8.76807 0.946746 9.41279L4.15656 10.9963L5.68351 16.7084C5.76283 17.0051 5.98311 17.2349 6.26258 17.3123C6.54206 17.3896 6.83899 17.3032 7.04314 17.085L9.39524 14.5709L12.6901 17.2122C13.6465 17.9789 15.0241 17.4204 15.2643 16.1687L17.9654 2.09463ZM1.62966 7.83133L16.369 1.74462L13.6679 15.8188L9.8077 12.7243C9.48332 12.4642 9.02939 12.4987 8.74266 12.8052L7.73522 13.882L8.03793 12.1026L13.969 5.76332C14.2577 5.45481 14.2882 4.96561 14.0404 4.61887C13.7926 4.27214 13.3431 4.17488 12.9887 4.39135L4.79761 9.39407L1.62966 7.83133ZM5.79633 10.7902L6.29042 12.6386L6.48011 11.5234C6.50977 11.3491 6.58844 11.1886 6.70563 11.0634L8.51443 9.13019L5.79633 10.7902Z"
+                    fill="#FCFEFC" />
+                </svg>
+              </a></li>
+            <li><a href="#" class="social-item-link">
+                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M10 0.500001C7.74456 0.498765 5.56237 1.3538 3.84416 2.91199C2.12596 4.47019 0.983956 6.62978 0.622647 9.00406C0.261337 11.3784 0.704318 13.8123 1.87227 15.87C3.04022 17.9277 4.85686 19.4749 6.9969 20.2344C7.47386 20.3286 7.64609 20.0177 7.64609 19.7634C7.64609 19.5091 7.64609 18.8874 7.64609 18.0443C4.9963 18.6566 4.44868 16.6879 4.44868 16.6879C4.27341 16.0649 3.89207 15.5311 3.37551 15.1854C2.51433 14.559 3.44175 14.5684 3.44175 14.5684C3.74257 14.6133 4.02982 14.7308 4.28161 14.912C4.5334 15.0932 4.74309 15.3333 4.89472 15.614C5.74266 17.1636 7.10289 16.7161 7.65934 16.4571C7.70328 15.9426 7.9178 15.4616 8.26438 15.1006C6.15338 14.8463 3.93638 13.9797 3.93638 10.0987C3.92239 9.09193 4.27365 8.11829 4.91681 7.38114C4.6246 6.50815 4.6578 5.54885 5.00955 4.70121C5.00955 4.70121 5.80449 4.42804 7.6196 5.73739C9.17521 5.28523 10.8159 5.28523 12.3716 5.73739C14.1867 4.42804 14.9816 4.70121 14.9816 4.70121C15.3307 5.5495 15.3638 6.50771 15.0744 7.38114C15.7163 8.11876 16.066 9.0925 16.0504 10.0987C16.0504 13.9891 13.8422 14.8416 11.7179 15.0959C11.9459 15.3422 12.1214 15.6379 12.2327 15.963C12.3439 16.2881 12.3883 16.6349 12.3627 16.9799C12.3627 18.3316 12.3627 19.4243 12.3627 19.7587C12.3627 20.0931 12.535 20.3427 13.0163 20.2297C15.1542 19.4672 16.9679 17.9184 18.1331 15.8604C19.2984 13.8024 19.739 11.3695 19.3762 8.99671C19.0135 6.62397 17.871 4.46627 16.1532 2.90958C14.4353 1.35288 12.2542 0.498763 10 0.500001Z"
+                    stroke="#FDFEFF" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a></li>
+          </ul>
 
-          <style>
-            table {
-              border-collapse: collapse; /* Убирает двойные границы */
-            }
-            td:not(:last-child) {
-              border-right: 1px solid black;
-              padding-right: 6px;
-            }
-            td:not(:first-child) {
-              padding-left: 6px;
-            }
-          </style>
-
-          <table>
-            <caption><strong>Социальные сети:</strong></caption>
+          <!-- <table>
+            <caption>
+              Социальные сети:
+            </caption>
             <tbody>
               <tr>
                 <td><a href="#" class="social-link">Instagram</a></td>
@@ -171,9 +339,37 @@
                 <td><a href="#" class="social-link">GitHub</a></td>
               </tr>
             </tbody>
-          </table>
-        </div>
+          </table> -->
+        </section>
+
+        <section class="footer-form">
+          <form class="form flex" action="https://jsonplaceholder.typicode.com/posts" method="post">
+            <div class="form-filing flex">
+              <div class="form-wrap">
+                <label for="i-email" class="label">Email</label>
+                <input id="i-email" class="form-input" type="text" name="Email" placeholder="Your email address"
+                  required="">
+              </div>
+              <div class="form-wrap">
+                <label for="i-text" class="label">Input your message</label>
+                <textarea id="i-text" class="form-input textarea" name="message" placeholder="Enter your message"
+                  rows="5" required=""></textarea>
+              </div>
+            </div>
+            <div>
+              <button class="button form-button" type="submit">Добавить</button>
+            </div>
+          </form>
+        </section>
       </div>
-    </footer>
+
+      <p class="footer-copyright">
+        © 2026 Anastasiya Pavlik
+      </p>
+
+    </div>
+
+  </footer>
 </body>
+
 </html>
