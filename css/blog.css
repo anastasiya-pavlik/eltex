@@ -24,7 +24,7 @@
 .article-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fit 3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 62px 34px;
 }
 

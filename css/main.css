@@ -94,6 +94,8 @@
 }
 
 .article-title {
+  margin: 0 0 16px;
+  padding-top: 8px;
   font-weight: 700;
   font-size: 32px;
   line-height: 26px;
