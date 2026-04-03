@@ -1,6 +1,63 @@
-/* main */
-/* hero */
+/* aside */
+.aside {
+  /* outline: 8px solid aqua; */
+  position: relative;
+}
 
+.aside-container {
+  /* outline: 5px solid green; */
+  position: fixed;
+  right: 0;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: 0px 3px 6px 3px rgba(50, 55, 71, 0.25);
+  background-color: var(--light-color);
+}
+
+.acide-content {
+  /* outline: 2px solid blue; */
+  padding: 24px 12px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.aside-btn {
+  /* outline: 1px solid red; */
+  display: inline-block;
+  position: relative;
+}
+
+.aside-btn::after {
+  content: attr(data-title);
+  position: absolute; /* Абсолютное позиционирование */
+  /* Положение подсказки */
+  right: 2em;
+  top: 1em;
+  z-index: 1; /* Отображаем подсказку поверх других элементов */
+  opacity: 0;
+  background: var(--main-color); /* Полупрозрачный цвет фона */
+  color: var(--light-color); /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  white-space: nowrap;
+  font-size: 12px; /* Размер текста подсказки */
+  padding: 6px 5px; /* Поля */
+/* Параметры рамки */
+  /* border: 1px solid var(--light-color); */
+  border-radius: var(--border-radius);
+  box-shadow: 0px 1px 1px 1px var(--light-color);
+}
+
+.aside-btn:hover::after {
+  opacity: 1;
+}
+
+/* main */
+.hidden-container {
+  flex-direction: column;
+  margin-bottom: 76px;
+}
+/* hero */
 .hero {
   gap: var(--gap);
 }
@@ -12,6 +69,7 @@
   border-radius: var(--border-radius);
   background-size: cover;
   background-position: center;
+  z-index: -1;
 }
 
 /* article */
@@ -120,4 +178,116 @@
   outline: none;
 }
 
+.new-article {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
 
+.new-article.is-open {
+    opacity: 1;
+}
+
+/* форма добавления статьи */
+.main-form {
+    overflow: hidden;        /* скрываем лишнее */
+    max-height: 0;           /* секция свернута */
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.main-form.is-open {
+    opacity: 1;
+}
+
+.main-form.is-open {
+    opacity: 1;
+}
+
+.form-title {
+  margin: 26px 0 46px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.main-form-btn {
+  width: 276px;
+  height: 51px;
+}
+
+.main-btn {
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* всплывающее окно */
+.dialogwindow {
+  border: none;
+  outline: none;
+  padding: 7px;
+}
+
+.modal {
+  padding: 17px 18px;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid var(--line-color);
+  border-radius: var(--border-radius);
+}
+
+.modal-header {
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 16px;
+}
+
+.modal-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.modal-text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-bottom: 10px;
+}
+
+.modal-mean {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+}
+
+.modal-body {
+  gap: 26px;
+}
+
+.modal-body-r, .modal-body-l {
+  padding: 12.5px 16px;
+  border: 1px solid var(--line-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0px 3px 6px 3px rgba(50, 55, 71, 0.25);
+}
+
+.modal-close {
+  max-width: 32px;
+  max-height: 30px;
+  background-color: var(--light-color);
+  border: 1px solid var(--line-color);
+  border-radius: var(--border-radius);
+  transition: all 0.2s linear;
+}
+
+.modal-close:hover {
+  background-color: var(--line-color);
+  transition: all 0.2s linear;
+}

@@ -139,7 +139,6 @@ img {
 .main-container {
   flex-direction: column;
   gap: 107px;
-  margin-bottom: 76px;
 }
 
 /* hero - обо мне */
@@ -185,7 +184,7 @@ img {
   font-weight: 700;
   /* padding: 13px 25px; */
   /* border: 2px solid var(--link-color); */
-  outline: 3px solid var(--link-color);
+  /* outline: 3px solid var(--link-color); */
   background-color: var(--article-back2);
   transition: 0.4s ease-in-out;
 }
@@ -280,19 +279,26 @@ img {
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0%;
+  text-indent: 8px
 }
 
 .form-input {
   padding: 17px 20px 20px;
-  background-color: var(--main-color);
   outline: none;
-  border: 1px solid var(--line-color);
   border-radius: var(--border-radius);
+}
+
+.footer-form-color {
+  background-color: var(--main-color);
+  border: 1px solid var(--line-color);
   color: var(--line-color);
 }
 
 .textarea {
   resize: none;
+}
+
+.footer-form-textarea-color {
   scrollbar-color: var(--main-color) var(--line-color); /* цвет ползунка, цвет фона */
 }
 
@@ -304,5 +310,5 @@ img {
 
 .form-button:hover {
   background-color: var(--link-color);
-  outline: 3px solid var(--light-color);
+  /* outline: 3px solid var(--light-color); */
 }
