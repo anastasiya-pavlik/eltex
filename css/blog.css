@@ -90,6 +90,28 @@
     justify-content: space-between;
 } */
 
+.article-grid {
+  position: relative;
+}
+
+.article-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 2; /* чтобы кнопка была поверх контента */
+}
+
+.article-grid:hover .article-close {
+  opacity: 1;
+  visibility: visible;
+}
+
 .article-grid:first-child {
   grid-column: 1 / 4;
   background-color: #FAFAFA;
