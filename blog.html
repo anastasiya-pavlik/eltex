@@ -37,6 +37,23 @@
     </div>
   </header>
 
+  <aside class="aside">
+    <div class="aside-container">
+      <div class="acide-content flex">
+        <button id="toggle-btn" class="btn-reset aside-btn" data-title="Добавить статью">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18C1.45 18 0.979 17.8043 0.587 17.413C0.195667 17.021 0 16.55 0 16V2C0 1.45 0.195667 0.979 0.587 0.587C0.979 0.195667 1.45 0 2 0H11V2H2V16H16V7H18V16C18 16.55 17.8043 17.021 17.413 17.413C17.021 17.8043 16.55 18 16 18H2ZM5 14V12H13V14H5ZM5 11V9H13V11H5ZM5 8V6H13V8H5ZM14 6V4H12V2H14V0H16V2H18V4H16V6H14Z" fill="#61C15C"/>
+          </svg>
+        </button>
+        <button class="btn-reset aside-btn" data-title="Посмотреть статистику" id="openModal">
+          <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.88 16.47C19.32 15.77 19.58 14.96 19.58 14.08C19.58 11.59 17.57 9.58 15.08 9.58C12.59 9.58 10.58 11.59 10.58 14.08C10.58 16.57 12.59 18.58 15.07 18.58C15.95 18.58 16.77 18.32 17.46 17.88L20.58 21L22 19.58L18.88 16.47ZM15.08 16.58C13.7 16.58 12.58 15.46 12.58 14.08C12.58 12.7 13.7 11.58 15.08 11.58C16.46 11.58 17.58 12.7 17.58 14.08C17.58 15.46 16.46 16.58 15.08 16.58ZM14.72 8.08C13.98 8.1 13.27 8.26 12.62 8.53L12.07 7.7L8.27 13.88L5.26 10.36L1.63 16.17L0 15L5 7L8 10.5L12 4L14.72 8.08ZM17.31 8.58C16.67 8.3 15.98 8.13 15.26 8.09L20.38 0L22 1.18L17.31 8.58Z" fill="#61C15C"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
   <main>
     <div class="container main-container flex">
       <section class="hero flex">
@@ -49,7 +66,7 @@
       </section>
 
       <section class="articles flex">
-        <div class="article-container">
+        <div class="article-container" id="article-container">
           <article class="article-grid flex">
             <div class="article-preview flex">
               <a href="#" class="article-preview-link">
@@ -121,10 +138,67 @@
             <img class="article-img article-img-second" src="./img/article3.jpg" alt="Article image">
           </article>
 
+                    <!-- Шаблон статьи -->
+          <template id="article-template">
+            <article class="article-grid flex">
+              <div class="article-preview flex">
+                <a href="#" class="article-preview-link">
+                  <h3 class="article-title">Новая статья</h3>
+                </a>
+                <p class="article-preview-time"><time datetime="2026-01-01T12:00">Jan 1, 2026</time></p>
+                <p class="article-preview-description">Это описание новой статьи, добавленной через JS.</p>
+              </div>
+              <img class="article-img" src="./img/article3.jpg" alt="Article image">
+            </article>
+          </template>
+
         </div>
         <div class="article-btn">
           <button class="btn-reset button">Следующие</button>
         </div>
+      </section>
+    </div>
+
+    <div class="container hidden-container flex">
+      <section class="main-form">
+        <h2 class="form-title">Добавить статью</h2>
+        <form class="form flex" action="https://jsonplaceholder.typicode.com/posts" method="post">
+          <div class="form-filing flex">
+              <div class="form-wrap">
+                <label for="title" class="label">Заголовок</label>
+                <input id="title" class="form-input" type="text" name="Заголовок" placeholder="Заголовок статьи" required="">
+              </div>
+              <div class="form-wrap">
+                <label for="artic-text" class="label">Текст статьи</label>
+                <textarea id="artic-text" class="form-input textarea" name="Текст статьи" placeholder="Текст статьи" rows="5" required=""></textarea>
+              </div>
+            </div>
+            <div class="main-btn flex">
+              <button id="add-article-button" class="button form-button main-form-btn" type="submit">Добавить</button>
+              <button class="btn-reset button main-form-btn" type="submit">Отмена</button>
+            </div>
+        </form>
+      </section>
+
+      <section class="statistic">
+        <dialog id="modalwindow" class="dialogwindow">
+          <div class="modal flex">
+            <div class="modal-header flex">
+              <h2 class="modal-title" id="dialogTitle">Статистика страницы</h2>
+              <button class="modal-close" type="button" data-close aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body flex">
+              <div class="modal-body-r">
+                <p class="modal-text">Всего статей:</p>
+                <p class="modal-mean">10</p>
+              </div>
+              <div class="modal-body-l">
+                <p class="modal-text">Комментарии:</p>
+                <p class="modal-mean">0</p>
+              </div>
+            </div>
+          </div>
+        </dialog>
       </section>
     </div>
 
@@ -191,12 +265,12 @@
             <div class="form-filing flex">
               <div class="form-wrap">
                 <label for="i-email" class="label">Email</label>
-                <input id="i-email" class="form-input" type="text" name="Email" placeholder="Your email address"
+                <input id="i-email" class="form-input footer-form-color" type="text" name="Email" placeholder="Your email address"
                   required="">
               </div>
               <div class="form-wrap">
                 <label for="i-text" class="label">Input your message</label>
-                <textarea id="i-text" class="form-input textarea" name="message" placeholder="Enter your message"
+                <textarea id="i-text" class="form-input footer-form-color footer-form-textarea-color textarea" name="message" placeholder="Enter your message"
                   rows="5" required=""></textarea>
               </div>
             </div>
@@ -214,6 +288,9 @@
     </div>
 
   </footer>
+
+  <script type="module" src="./JS/index.js"></script>
+
 </body>
 
 </html>
