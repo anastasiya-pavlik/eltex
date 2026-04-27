@@ -168,6 +168,24 @@ img {
 
 /* articles */
 
+.article {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.article.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.article.is-removing {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
 .button {
   display: inline-block;
   padding: 14px 30px;
