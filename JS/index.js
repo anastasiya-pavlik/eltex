@@ -1,4 +1,18 @@
 /**
+ * Хранилище
+ */
+
+const STORAGE_KEY = 'articles';
+
+function getArticles() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+}
+
+function saveArticles(articles) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));
+}
+
+/**
  * Открытие диалогового окна
  */
 const openModalBtnId = 'openModal';
@@ -34,48 +48,40 @@ dialog.addEventListener('click', (e) => {
  * Открытие формы
  */
 
-const toggleBtn = document.getElementById('toggle-btn'); // кнопка открытия
+const toggleBtn = document.getElementById('toggle-btn');
 const section = document.querySelector('.main-form');
-const cancelBtn = section.querySelector('.btn-reset'); // кнопка "Отмена"
-const form = section.querySelector('form'); // сама форма
+const cancelBtn = section?.querySelector('.btn-reset');
+const form = section?.querySelector('form');
 
-// Открытие секции
-toggleBtn.addEventListener('click', () => {
-    if (!section.classList.contains('is-open')) {
+if (toggleBtn && section && cancelBtn && form) {
+
+    toggleBtn.addEventListener('click', () => {
+        if (section.classList.contains('is-open')) return;
+
         section.classList.add('is-open');
-        // устанавливаем max-height равным scrollHeight для плавного раскрытия
-        section.style.maxHeight = section.scrollHeight + 'px';
-    }
-});
 
-// Плавное закрытие секции по кнопке "Отмена" и очистка формы
-cancelBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // предотвращаем отправку формы
-    if (section.classList.contains('is-open')) {
-        // сбрасываем max-height на auto, чтобы плавно схлопывать
-        const sectionHeight = section.scrollHeight;
-        section.style.maxHeight = sectionHeight + 'px'; // зафиксировать текущую высоту
-        section.style.opacity = '1'; // убедимся, что opacity на месте
+        const height = section.scrollHeight;
+        section.style.height = height + 'px';
+
+        section.addEventListener('transitionend', () => {
+            section.style.height = 'auto';
+        }, { once: true });
+    });
+
+    cancelBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const height = section.scrollHeight;
+        section.style.height = height + 'px';
 
         requestAnimationFrame(() => {
-            // плавное схлопывание
-            section.style.maxHeight = '0px';
-            section.style.opacity = '0';
+            section.style.height = '0px';
+            section.classList.remove('is-open');
         });
 
-        section.addEventListener('transitionend', function handler(event) {
-            if (event.propertyName === 'max-height') {
-                section.classList.remove('is-open');
-                section.style.maxHeight = ''; // сбросим, чтобы auto работало при следующем открытии
-                section.style.opacity = ''; // сброс
-                section.removeEventListener('transitionend', handler);
-            }
-        });
-    }
-
-    // Очистка всех полей формы
-    form.reset();
-});
+        form.reset();
+    });
+}
 
 /**
  * добавление статьи
@@ -119,61 +125,109 @@ const articleContainer = document.getElementById('article-container');
 const addArticleButton = document.getElementById('add-article-button');
 const titleInput = document.getElementById('title');
 const textInput = document.getElementById('artic-text');
+const emptyMessage = document.getElementById('empty-message');
 
-addArticleButton.addEventListener('click', function(e) {
-    e.preventDefault(); // отменяем стандартное поведение формы
+function toggleEmptyMessage() {
+    const articles = getArticles();
 
-    // Получаем значения из формы
-    const title = titleInput.value.trim();
-    const description = textInput.value.trim();
-    if (!title || !description) return; // не добавляем пустую статью
+    if (articles.length === 0) {
+        emptyMessage.classList.remove('hidden');
+    } else {
+        emptyMessage.classList.add('hidden');
+    }
+}
 
-    // Создаём элемент статьи
+function createArticleElement(data) {
     const article = document.createElement('article');
-    article.className = 'article-grid flex';
+    article.className = 'article article-grid flex';
+    article.dataset.id = data.id;
+
     article.innerHTML = `
-            <button class="article-close" type="button" data-close aria-label="Закрыть">
-            <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <button class="article-close" type="button" data-close aria-label="Закрыть">
+            <svg width="14" height="18" viewBox="0 0 14 18">
                 <path d="M11 6V16H3V6H11ZM9.5 0H4.5L3.5 1H0V3H14V1H10.5L9.5 0ZM13 4H1V16C1 17.1 1.9 18 3 18H11C12.1 18 13 17.1 13 16V4Z" fill="#61C15C"/>
             </svg>
-            </button>
-            <div class="article-preview flex">
-                <a href="#" class="article-preview-link">
-                    <h3 class="article-title">${title}</h3>
-                </a>
-                <p class="article-preview-time"><time datetime="${new Date().toISOString()}">${new Date().toLocaleDateString()}</time></p>
-                <p class="article-preview-description">${description}</p>
-            </div>
-            <img class="article-img" src="./img/article3.jpg" alt="Article image">
-    `;
+        </button>
 
-    // Стили для плавного появления
-    article.style.overflow = 'hidden';
-    article.style.maxHeight = '0px';
-    article.style.opacity = '0';
-    article.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
+        <div class="article-preview flex">
+            <a href="#" class="article-preview-link">
+                <h3 class="article-title">${data.title}</h3>
+            </a>
 
-    // Добавляем в контейнер
+            <p class="article-preview-time">
+                <time datetime="${data.dateISO}">
+                    ${data.dateText}
+                </time>
+            </p>
+
+            <p class="article-preview-description">
+                ${data.description}
+            </p>
+        </div>
+
+        <img class="article-img" src="./img/article3.jpg" alt="Article image">`;
+
+    return article;
+}
+
+function renderArticles() {
+    const articles = getArticles();
+
+    articles.forEach(data => {
+        const article = createArticleElement(data);
+        articleContainer.appendChild(article);
+
+        // без анимации при загрузке
+        article.classList.add('is-visible');
+        article.style.height = 'auto';
+    });
+}
+
+renderArticles();
+toggleEmptyMessage();
+
+addArticleButton.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const title = titleInput.value.trim();
+    const description = textInput.value.trim();
+    if (!title || !description) return;
+
+    const now = new Date();
+
+    const articleData = {
+        id: Date.now().toString(),
+        title,
+        description,
+        dateISO: now.toISOString(),
+        dateText: now.toLocaleDateString()
+    };
+
+    // сохраняем
+    const articles = getArticles();
+    articles.push(articleData);
+    saveArticles(articles);
+
+    const article = createArticleElement(articleData);
     articleContainer.appendChild(article);
 
-    // Плавное раскрытие
+    // анимация
+    const height = article.scrollHeight;
+    article.style.height = '0px';
+
     requestAnimationFrame(() => {
-        article.style.maxHeight = article.scrollHeight + 'px';
-        article.style.opacity = '1';
+        article.classList.add('is-visible');
+        article.style.height = height + 'px';
     });
 
-    // После анимации убираем inline max-height
-    article.addEventListener('transitionend', function handler(e) {
-        if (e.propertyName === 'max-height') {
-            article.style.maxHeight = '';
-            article.style.overflow = '';
-            article.removeEventListener('transitionend', handler);
-        }
-    });
+    article.addEventListener('transitionend', () => {
+        article.style.height = 'auto';
+    }, { once: true });
 
-    // Очистка полей формы после добавления
     titleInput.value = '';
     textInput.value = '';
+
+    toggleEmptyMessage();
 });
 
 /**
@@ -181,12 +235,42 @@ addArticleButton.addEventListener('click', function(e) {
  */
 
 // Делегирование события — удобно, если статьи добавляются динамически
+// articleContainer.addEventListener('click', function(e) {
+//     const btn = e.target.closest('[data-close]'); // если клик был на кнопке закрытия
+//     if (!btn) return;
+
+//     const article = btn.closest('article'); // находим родительский article
+//     if (!article) return;
+
+//     article.remove();
+// });
+
 articleContainer.addEventListener('click', function(e) {
-    const btn = e.target.closest('[data-close]'); // если клик был на кнопке закрытия
+    const btn = e.target.closest('[data-close]');
     if (!btn) return;
 
-    const article = btn.closest('article'); // находим родительский article
+    const article = btn.closest('.article');
     if (!article) return;
 
-    article.remove();
+    const id = article.dataset.id;
+
+    //  удаляем из storage
+    let articles = getArticles();
+    articles = articles.filter(a => a.id !== id);
+    saveArticles(articles);
+
+    // анимация удаления
+    const height = article.scrollHeight;
+    article.style.height = height + 'px';
+
+    requestAnimationFrame(() => {
+        article.classList.add('is-removing');
+        article.style.height = '0px';
+    });
+
+    article.addEventListener('transitionend', () => {
+        article.remove();
+    }, { once: true });
+
+    toggleEmptyMessage();
 });
